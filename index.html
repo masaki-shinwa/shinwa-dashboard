@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>神話ver2 地合い判定</title>
+<style>
+:root{--bg:#f4f4f2;--card:#fff;--line:#e3e3df;--t1:#1a1a1a;--t2:#6b6b66;--t3:#9b9b95;--blue:#185fa5;
+--up:#1e7d50;--down:#c0392b;
+--good-bg:#e3f6ec;--good-fg:#1e7d50;--warn-bg:#fdf3da;--warn-fg:#8a5a00;--bad-bg:#fdecea;--bad-fg:#c0392b;--neu-bg:#efeee9;--neu-fg:#444;}
+@media(prefers-color-scheme:dark){:root{--bg:#0d0d0f;--card:#1a1a1d;--line:#2a2a2e;--t1:#ececec;--t2:#9a9a9a;--t3:#6a6a6a;--blue:#5aa6ef;
+--up:#4cd187;--down:#f0817a;
+--good-bg:#10331f;--good-fg:#4cd187;--warn-bg:#3a2e0e;--warn-fg:#f0c64c;--bad-bg:#3a1714;--bad-fg:#f0817a;--neu-bg:#222226;--neu-fg:#bcbcbc;}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;padding:16px;}
+.wrap{max-width:440px;margin:0 auto;}
+.head{display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:16px;font-weight:600;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;}
+.lbl{font-size:12px;color:var(--t3);margin:0 0 10px;}
+.trow{display:flex;align-items:baseline;gap:8px;margin-bottom:6px;}.trow:last-child{margin-bottom:0;}
+.tzn{font-size:13px;color:var(--t2);min-width:34px;}
+.tval{font-size:27px;font-weight:600;letter-spacing:.5px;}.tsuf{font-size:13px;color:var(--t3);}
+.us .tval,.us .tsuf{color:var(--blue);}
+.badge{border-radius:14px;padding:16px;margin-bottom:14px;}
+.badge .bname{font-size:19px;font-weight:600;margin:0 0 6px;}
+.badge .bdetail{font-size:13px;line-height:1.6;margin:0;opacity:.92;}
+.badge.warn{background:var(--warn-bg);}.badge.warn .bname,.badge.warn .bdetail{color:var(--warn-fg);}
+.badge.bad{background:var(--bad-bg);}.badge.bad .bname,.badge.bad .bdetail{color:var(--bad-fg);}
+.badge.good{background:var(--good-bg);}.badge.good .bname,.badge.good .bdetail{color:var(--good-fg);}
+.badge.neutral{background:var(--neu-bg);}.badge.neutral .bname,.badge.neutral .bdetail{color:var(--neu-fg);}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.cell{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;}
+.cell .cl{font-size:13px;color:var(--t2);margin:0 0 4px;}
+.cell .cv{font-size:24px;font-weight:600;margin:0 0 6px;}
+.cv.up{color:var(--up);}.cv.down{color:var(--down);}.cv.flat{color:var(--t1);}
+.chip{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:8px;margin-bottom:4px;}
+.chip.good{background:var(--good-bg);color:var(--good-fg);}
+.chip.warn{background:var(--warn-bg);color:var(--warn-fg);}
+.chip.bad{background:var(--bad-bg);color:var(--bad-fg);}
+.basis{font-size:10px;color:var(--t3);margin:0;line-height:1.4;}
+.regime{display:flex;align-items:center;gap:8px;border-radius:12px;padding:12px 14px;font-size:13px;font-weight:600;margin-bottom:14px;}
+.regime.good{background:var(--good-bg);color:var(--good-fg);}
+.regime.warn{background:var(--warn-bg);color:var(--warn-fg);}
+.regime.bad{background:var(--bad-bg);color:var(--bad-fg);}
+.insight{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;}
+.insight .it{font-size:12px;color:var(--t3);margin:0 0 8px;display:flex;align-items:center;gap:6px;}
+.insight .ib{font-size:13px;line-height:1.7;margin:0;color:var(--t1);}
+.foot{text-align:center;font-size:11px;color:var(--t3);margin-top:14px;}
+</style></head>
+<body><div class="wrap">
+<div class="head">📊 神話ver2 地合い判定</div>
+
+<div class="card">
+<p class="lbl">取得時刻</p>
+<div class="trow"><span class="tzn">日本</span><span class="tval">06/18 19:41</span><span class="tsuf">JST</span></div>
+<div class="trow us"><span class="tzn">米国</span><span class="tval">06/18 06:41</span><span class="tsuf">EDT</span></div>
+</div>
+
+<div class="badge warn">
+<p class="bname">⚠️ 地合い崩れモード</p>
+<p class="bdetail">VIXは低いが下押し進行・新規買い慎重</p>
+</div>
+
+<div class="grid">
+<div class="cell"><p class="cl">QQQ ナスダック100</p><p class="cv down">-1.01%</p><span class="chip warn">🟠 下押し</span><p class="basis">基準:+3.0%以上で短期天井</p></div>
+<div class="cell"><p class="cl">SPY S&amp;P500</p><p class="cv down">-1.25%</p><span class="chip warn">🟠 下押し</span><p class="basis">基準:+1.5%以上で利食い警戒</p></div>
+<div class="cell"><p class="cl">SOXX 半導体</p><p class="cv up">+1.44%</p><span class="chip good">🟢 上昇</span><p class="basis">基準:+4.0%以上でクライマックス</p></div>
+<div class="cell"><p class="cl">VIX 恐怖指数</p><p class="cv flat">17.01</p><span class="chip good">🟢 安定推移</span><p class="basis">基準:20未満=通常/25以上=パニック</p></div>
+</div>
+
+<div class="regime good">VIXレジーム：🟢 通常モード（VIX20未満）</div>
+
+<div class="insight">
+<p class="it">🧭 指揮官への戦略インサイト</p>
+<p class="ib">VIXはまだ低いものの、主要指数が下押し進行中です。『問題なし』ではありません。新規買いは見送り、無理なINを避けます。</p>
+</div>
+
+<p class="foot">神話ver2 ／ 地合い判定（自動生成）</p>
+</div></body></html>
