@@ -21,13 +21,17 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 .tval{font-size:27px;font-weight:600;letter-spacing:.5px;}.tsuf{font-size:13px;color:var(--t3);}
 .us .tval,.us .tsuf{color:var(--blue);}
 .badge{border-radius:14px;padding:16px;margin-bottom:14px;}
-.badge .bname{font-size:19px;font-weight:600;margin:0 0 6px;}
+.badge .btop{display:flex;align-items:center;gap:8px;margin:0 0 6px;}
+.ttag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:7px;background:rgba(0,0,0,.10);}
+.badge .bname{font-size:19px;font-weight:600;}
 .badge .bdetail{font-size:13px;line-height:1.6;margin:0;opacity:.92;}
-.badge.warn{background:var(--warn-bg);}.badge.warn .bname,.badge.warn .bdetail{color:var(--warn-fg);}
-.badge.bad{background:var(--bad-bg);}.badge.bad .bname,.badge.bad .bdetail{color:var(--bad-fg);}
-.badge.good{background:var(--good-bg);}.badge.good .bname,.badge.good .bdetail{color:var(--good-fg);}
-.badge.neutral{background:var(--neu-bg);}.badge.neutral .bname,.badge.neutral .bdetail{color:var(--neu-fg);}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.badge.warn{background:var(--warn-bg);}.badge.warn .bname,.badge.warn .bdetail,.badge.warn .ttag{color:var(--warn-fg);}
+.badge.bad{background:var(--bad-bg);}.badge.bad .bname,.badge.bad .bdetail,.badge.bad .ttag{color:var(--bad-fg);}
+.badge.good{background:var(--good-bg);}.badge.good .bname,.badge.good .bdetail,.badge.good .ttag{color:var(--good-fg);}
+.badge.neutral{background:var(--neu-bg);}.badge.neutral .bname,.badge.neutral .bdetail,.badge.neutral .ttag{color:var(--neu-fg);}
+.divwarn{background:var(--bad-bg);color:var(--bad-fg);border-radius:12px;padding:11px 14px;font-size:12px;font-weight:600;line-height:1.5;margin-bottom:14px;}
+.sec{font-size:12px;color:var(--t2);font-weight:600;margin:2px 2px 8px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
 .cell{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;}
 .cell .cl{font-size:13px;color:var(--t2);margin:0 0 4px;}
 .cell .cv{font-size:24px;font-weight:600;margin:0 0 6px;}
@@ -51,20 +55,29 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 
 <div class="card">
 <p class="lbl">取得時刻</p>
-<div class="trow"><span class="tzn">日本</span><span class="tval">06/19 13:37</span><span class="tsuf">JST</span></div>
-<div class="trow us"><span class="tzn">米国</span><span class="tval">06/19 00:37</span><span class="tsuf">EDT</span></div>
+<div class="trow"><span class="tzn">日本</span><span class="tval">06/21 17:46</span><span class="tsuf">JST</span></div>
+<div class="trow us"><span class="tzn">米国</span><span class="tval">06/21 04:46</span><span class="tsuf">EDT</span></div>
 </div>
 
 <div class="badge warn">
-<p class="bname">【ザラ場】🟡 上昇過熱・資金還流モード</p>
+<p class="btop"><span class="ttag">プレ</span><span class="bname">🟡 上昇過熱・資金還流モード</span></p>
 <p class="bdetail">安易な売り厳禁・押し目待ち</p>
 </div>
 
+<div class="divwarn">⚠️ 半導体（SOXX）だけが異常に孤立。大口による強引な吊り上げ（歪み）を検知。</div>
+
+<p class="sec">📊 表面の株価（イナゴの興奮度）</p>
 <div class="grid">
 <div class="cell"><p class="cl">QQQ ナスダック100</p><p class="cv up">+1.46%</p><span class="chip good">🟢 上昇</span><p class="basis">基準:+3.0%以上で短期天井</p></div>
 <div class="cell"><p class="cl">SPY S&amp;P500</p><p class="cv up">+0.15%</p><span class="chip good">🟢 横ばい圏</span><p class="basis">基準:+1.5%以上で利食い警戒</p></div>
 <div class="cell"><p class="cl">SOXX 半導体</p><p class="cv up">+4.45%</p><span class="chip bad">🔴 クライマックス</span><p class="basis">基準:+4.0%以上でクライマックス</p></div>
-<div class="cell"><p class="cl">VIX 恐怖指数</p><p class="cv flat">16.40</p><span class="chip good">🟢 安定推移</span><p class="basis">基準:20未満=通常/25以上=パニック</p></div>
+</div>
+
+<p class="sec">⚖️ 裏の大口資金（天秤）</p>
+<div class="grid">
+<div class="cell"><p class="cl">OIL 原油</p><p class="cv up">+0.53%</p><span class="chip good">🟢 安定</span><p class="basis">急騰しなければハイテクに無害</p></div>
+<div class="cell"><p class="cl">US10Y 米10年債金利</p><p class="cv down">-0.27%</p><span class="chip good">🟢 金利低下（ハイテク追い風）</span><p class="basis">金利低下はハイテクに追い風</p></div>
+<div class="cell"><p class="cl">VIX 恐怖指数</p><p class="cv flat">16.78</p><span class="chip good">🟢 安定推移</span><p class="basis">基準:20未満=通常/25以上=パニック</p></div>
 </div>
 
 <div class="regime good">VIXレジーム：🟢 通常モード（VIX20未満）</div>
