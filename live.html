@@ -43,26 +43,48 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 .m b.up{color:var(--up);}.m b.down{color:var(--down);}
 .m b.cr-good{color:var(--up);}.m b.cr-bad{color:var(--down);}.m b.cr-neu{color:var(--t3);}
 .m i{font-size:9px;color:var(--t3);font-style:normal;}
-.levels{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--t2);}
+.levels{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--t2);margin-bottom:11px;}
 .levels b{color:var(--t1);}
 .levels b.up{color:var(--up);}.levels b.down{color:var(--down);}
 .chip{display:inline-block;font-size:10px;font-weight:700;padding:1px 7px;border-radius:8px;}
 .chip.good{background:var(--good-bg);color:var(--good-fg);}
 .chip.bad{background:var(--bad-bg);color:var(--bad-fg);}
+.flowwrap{margin:4px 0 2px;}
+.flowlabel{font-size:9px;color:var(--t3);margin-bottom:4px;}
+.flow{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:1px;padding-bottom:3px;-webkit-overflow-scrolling:touch;}
+.fe{flex:0 0 auto;font-size:15px;line-height:1.4;border-radius:6px;padding:1px 2px;}
+.fe.st-good{background:var(--good-bg);}
+.fe.st-warn{background:var(--warn-bg);}
+.fe.st-bad{background:var(--bad-bg);}
+.fe.st-neutral{background:var(--neu-bg);}
+.dtoggle{width:100%;margin-top:10px;border:none;background:var(--bg);color:var(--t2);font-size:12px;font-weight:700;border-radius:12px;padding:9px;cursor:pointer;font-family:inherit;}
+.detail{display:none;margin-top:9px;}
+.detail.open{display:block;}
+.dtable{width:100%;border-collapse:collapse;font-size:11px;}
+.dtable th{color:var(--t3);font-weight:700;font-size:10px;padding:5px 3px;border-bottom:1px solid var(--line);text-align:right;}
+.dtable th:first-child,.dtable td:first-child{text-align:left;}
+.dtable th:last-child,.dtable td:last-child{text-align:left;}
+.dtable td{padding:5px 3px;text-align:right;border-bottom:1px solid var(--line);color:var(--t1);}
+.dtable td.dt{color:var(--t2);font-weight:700;}
+.dtable td.ds{font-weight:700;font-size:10px;}
+.dr-good td.ds{color:var(--good-fg);}
+.dr-warn td.ds{color:var(--warn-fg);}
+.dr-bad td.ds{color:var(--bad-fg);}
+.dr-neutral td.ds{color:var(--neu-fg);}
 .foot{text-align:center;font-size:10px;color:var(--t3);margin-top:10px;}
 </style></head>
 <body><div class="wrap">
 <div class="head">⚡ 神話相場ライブ<a class="backbtn" href="index.html">← 司令塔へ</a></div>
-<div class="timecard"><span class="tk">取得</span><span class="tj">06/24 19:44 JST</span><span class="te">06/24 06:44 EDT</span></div>
-<p class="sec">🧭 地合い（15分足・WMSR × StochRSI クロス）</p>
+<div class="timecard"><span class="tk">取得</span><span class="tj">06/24 20:19 JST</span><span class="te">06/24 07:19 EDT</span></div>
+<p class="sec">🧭 地合い（15分足・2軸スコア：位置%R × 勢いStochRSI）</p>
 
-<div class="card st-warn">
+<div class="card st-bad">
 <div class="chead">
 <span class="ctkr">QQQ</span>
 <span class="cname">ナスダック100</span>
-<span class="state warn">🍂 失速中</span>
+<span class="state bad">⚠️ 急落注意</span>
 </div>
-<div class="ssub">上から落ち中</div>
+<div class="ssub">底値圏で下落中</div>
 <div class="metrics">
 <div class="m"><b>713.65</b><i>価格</i></div>
 <div class="m"><b class="down">-0.16%</b><i>前足比</i></div>
@@ -76,6 +98,137 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span>高値乖離 <b class="down">-0.89%</b></span>
 <span>出来高 <b class="up">+285.9%</b></span>
 </div>
+<div class="flowwrap">
+<div class="flowlabel">状態の流れ（古い→新しい）</div>
+<div class="flow"><span class="fe st-bad" title="11:15 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="11:30 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="11:45 ⚠️ 急落注意">⚠️</span><span class="fe st-good" title="12:00 🌱 反発期待">🌱</span><span class="fe st-good" title="12:15 🍃 回復中">🍃</span><span class="fe st-good" title="12:30 🍃 回復中">🍃</span><span class="fe st-good" title="12:45 🍃 回復中">🍃</span><span class="fe st-good" title="13:00 🚀 強い">🚀</span><span class="fe st-good" title="13:15 🍃 回復中">🍃</span><span class="fe st-warn" title="13:30 🔥 買われすぎ">🔥</span><span class="fe st-warn" title="13:45 🔥 買われすぎ">🔥</span><span class="fe st-bad" title="14:00 ⚠️ 急落注意">⚠️</span><span class="fe st-warn" title="14:15 🍂 失速中">🍂</span><span class="fe st-bad" title="14:30 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="14:45 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="15:00 ⚠️ 急落注意">⚠️</span><span class="fe st-warn" title="15:15 🍂 失速中">🍂</span><span class="fe st-good" title="15:30 🍃 回復中">🍃</span><span class="fe st-good" title="15:45 🍃 回復中">🍃</span><span class="fe st-bad" title="16:00 ⚠️ 急落注意">⚠️</span></div>
+</div>
+<button class="dtoggle" onclick="toggleDetail(0)">📋 詳細履歴をひらく</button>
+<div class="detail" id="detail-0">
+<table class="dtable">
+<tr><th>時刻</th><th>価格</th><th>%R</th><th>K</th><th>D</th><th>状態</th></tr>
+<tr class="dr-bad">
+<td class="dt">16:00</td>
+<td>713.65</td>
+<td>-81</td>
+<td>61</td>
+<td>55</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-good">
+<td class="dt">15:45</td>
+<td>714.80</td>
+<td>-67</td>
+<td>61</td>
+<td>44</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">15:30</td>
+<td>715.23</td>
+<td>-62</td>
+<td>44</td>
+<td>33</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-warn">
+<td class="dt">15:15</td>
+<td>714.41</td>
+<td>-72</td>
+<td>25</td>
+<td>32</td>
+<td class="ds">🍂 失速中</td></tr><tr class="dr-bad">
+<td class="dt">15:00</td>
+<td>713.38</td>
+<td>-84</td>
+<td>28</td>
+<td>41</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">14:45</td>
+<td>713.35</td>
+<td>-99</td>
+<td>42</td>
+<td>52</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">14:30</td>
+<td>715.88</td>
+<td>-85</td>
+<td>52</td>
+<td>62</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-warn">
+<td class="dt">14:15</td>
+<td>716.21</td>
+<td>-80</td>
+<td>61</td>
+<td>73</td>
+<td class="ds">🍂 失速中</td></tr><tr class="dr-bad">
+<td class="dt">14:00</td>
+<td>715.87</td>
+<td>-89</td>
+<td>73</td>
+<td>83</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-warn">
+<td class="dt">13:45</td>
+<td>718.21</td>
+<td>-63</td>
+<td>85</td>
+<td>84</td>
+<td class="ds">🔥 買われすぎ</td></tr><tr class="dr-warn">
+<td class="dt">13:30</td>
+<td>719.08</td>
+<td>-53</td>
+<td>89</td>
+<td>76</td>
+<td class="ds">🔥 買われすぎ</td></tr><tr class="dr-good">
+<td class="dt">13:15</td>
+<td>718.71</td>
+<td>-58</td>
+<td>76</td>
+<td>63</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">13:00</td>
+<td>719.04</td>
+<td>-44</td>
+<td>64</td>
+<td>52</td>
+<td class="ds">🚀 強い</td></tr><tr class="dr-good">
+<td class="dt">12:45</td>
+<td>719.95</td>
+<td>-74</td>
+<td>50</td>
+<td>43</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">12:30</td>
+<td>719.39</td>
+<td>-76</td>
+<td>43</td>
+<td>34</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">12:15</td>
+<td>720.03</td>
+<td>-73</td>
+<td>34</td>
+<td>26</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">12:00</td>
+<td>717.53</td>
+<td>-83</td>
+<td>24</td>
+<td>22</td>
+<td class="ds">🌱 反発期待</td></tr><tr class="dr-bad">
+<td class="dt">11:45</td>
+<td>715.96</td>
+<td>-89</td>
+<td>21</td>
+<td>23</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">11:30</td>
+<td>715.77</td>
+<td>-90</td>
+<td>23</td>
+<td>27</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">11:15</td>
+<td>717.33</td>
+<td>-84</td>
+<td>26</td>
+<td>30</td>
+<td class="ds">⚠️ 急落注意</td></tr>
+</table>
+</div>
 </div>
 <div class="card st-bad">
 <div class="chead">
@@ -83,7 +236,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="cname">S&P500</span>
 <span class="state bad">⚠️ 急落注意</span>
 </div>
-<div class="ssub">VWAP割れ＋下落中</div>
+<div class="ssub">底値圏で下落中</div>
 <div class="metrics">
 <div class="m"><b>733.58</b><i>価格</i></div>
 <div class="m"><b class="down">-0.13%</b><i>前足比</i></div>
@@ -97,14 +250,145 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span>高値乖離 <b class="down">-0.61%</b></span>
 <span>出来高 <b class="up">+228.4%</b></span>
 </div>
+<div class="flowwrap">
+<div class="flowlabel">状態の流れ（古い→新しい）</div>
+<div class="flow"><span class="fe st-warn" title="11:15 🍂 失速中">🍂</span><span class="fe st-bad" title="11:30 ⚠️ 急落注意">⚠️</span><span class="fe st-warn" title="11:45 🍂 失速中">🍂</span><span class="fe st-good" title="12:00 🍃 回復中">🍃</span><span class="fe st-good" title="12:15 🍃 回復中">🍃</span><span class="fe st-good" title="12:30 🍃 回復中">🍃</span><span class="fe st-good" title="12:45 🍃 回復中">🍃</span><span class="fe st-warn" title="13:00 🔥 買われすぎ">🔥</span><span class="fe st-warn" title="13:15 🔥 買われすぎ">🔥</span><span class="fe st-warn" title="13:30 🔥 買われすぎ">🔥</span><span class="fe st-warn" title="13:45 🔥 買われすぎ">🔥</span><span class="fe st-warn" title="14:00 🍂 失速中">🍂</span><span class="fe st-warn" title="14:15 🍂 失速中">🍂</span><span class="fe st-warn" title="14:30 🍂 失速中">🍂</span><span class="fe st-bad" title="14:45 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="15:00 ⚠️ 急落注意">⚠️</span><span class="fe st-neutral" title="15:15 ⚪ 中立">⚪</span><span class="fe st-good" title="15:30 🍃 回復中">🍃</span><span class="fe st-good" title="15:45 🍃 回復中">🍃</span><span class="fe st-bad" title="16:00 ⚠️ 急落注意">⚠️</span></div>
 </div>
-<div class="card st-neutral">
+<button class="dtoggle" onclick="toggleDetail(1)">📋 詳細履歴をひらく</button>
+<div class="detail" id="detail-1">
+<table class="dtable">
+<tr><th>時刻</th><th>価格</th><th>%R</th><th>K</th><th>D</th><th>状態</th></tr>
+<tr class="dr-bad">
+<td class="dt">16:00</td>
+<td>733.58</td>
+<td>-95</td>
+<td>42</td>
+<td>41</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-good">
+<td class="dt">15:45</td>
+<td>734.50</td>
+<td>-75</td>
+<td>46</td>
+<td>33</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">15:30</td>
+<td>735.01</td>
+<td>-65</td>
+<td>35</td>
+<td>25</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-neutral">
+<td class="dt">15:15</td>
+<td>734.47</td>
+<td>-76</td>
+<td>18</td>
+<td>25</td>
+<td class="ds">⚪ 中立</td></tr><tr class="dr-bad">
+<td class="dt">15:00</td>
+<td>734.02</td>
+<td>-85</td>
+<td>22</td>
+<td>36</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">14:45</td>
+<td>733.82</td>
+<td>-99</td>
+<td>36</td>
+<td>50</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-warn">
+<td class="dt">14:30</td>
+<td>735.40</td>
+<td>-69</td>
+<td>50</td>
+<td>64</td>
+<td class="ds">🍂 失速中</td></tr><tr class="dr-warn">
+<td class="dt">14:15</td>
+<td>735.81</td>
+<td>-59</td>
+<td>64</td>
+<td>77</td>
+<td class="ds">🍂 失速中</td></tr><tr class="dr-warn">
+<td class="dt">14:00</td>
+<td>735.79</td>
+<td>-68</td>
+<td>78</td>
+<td>86</td>
+<td class="ds">🍂 失速中</td></tr><tr class="dr-warn">
+<td class="dt">13:45</td>
+<td>737.15</td>
+<td>-46</td>
+<td>89</td>
+<td>90</td>
+<td class="ds">🔥 買われすぎ</td></tr><tr class="dr-warn">
+<td class="dt">13:30</td>
+<td>737.53</td>
+<td>-39</td>
+<td>92</td>
+<td>88</td>
+<td class="ds">🔥 買われすぎ</td></tr><tr class="dr-warn">
+<td class="dt">13:15</td>
+<td>737.35</td>
+<td>-42</td>
+<td>88</td>
+<td>84</td>
+<td class="ds">🔥 買われすぎ</td></tr><tr class="dr-warn">
+<td class="dt">13:00</td>
+<td>737.44</td>
+<td>-30</td>
+<td>84</td>
+<td>77</td>
+<td class="ds">🔥 買われすぎ</td></tr><tr class="dr-good">
+<td class="dt">12:45</td>
+<td>737.87</td>
+<td>-56</td>
+<td>78</td>
+<td>67</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">12:30</td>
+<td>737.38</td>
+<td>-60</td>
+<td>68</td>
+<td>54</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">12:15</td>
+<td>737.48</td>
+<td>-59</td>
+<td>55</td>
+<td>43</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">12:00</td>
+<td>735.97</td>
+<td>-71</td>
+<td>40</td>
+<td>37</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-warn">
+<td class="dt">11:45</td>
+<td>735.00</td>
+<td>-79</td>
+<td>35</td>
+<td>39</td>
+<td class="ds">🍂 失速中</td></tr><tr class="dr-bad">
+<td class="dt">11:30</td>
+<td>734.59</td>
+<td>-83</td>
+<td>38</td>
+<td>44</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-warn">
+<td class="dt">11:15</td>
+<td>736.12</td>
+<td>-72</td>
+<td>44</td>
+<td>50</td>
+<td class="ds">🍂 失速中</td></tr>
+</table>
+</div>
+</div>
+<div class="card st-warn">
 <div class="chead">
 <span class="ctkr">SOXX</span>
 <span class="cname">半導体</span>
-<span class="state neutral">⚪ 中立</span>
+<span class="state warn">🔥 買われすぎ</span>
 </div>
-<div class="ssub">方向感なし</div>
+<div class="ssub">天井警戒・利確圏</div>
 <div class="metrics">
 <div class="m"><b>603.39</b><i>価格</i></div>
 <div class="m"><b class="down">-0.06%</b><i>前足比</i></div>
@@ -118,6 +402,146 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span>高値乖離 <b class="down">-1.29%</b></span>
 <span>出来高 <b class="up">+387.7%</b></span>
 </div>
+<div class="flowwrap">
+<div class="flowlabel">状態の流れ（古い→新しい）</div>
+<div class="flow"><span class="fe st-bad" title="11:15 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="11:30 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="11:45 ⚠️ 急落注意">⚠️</span><span class="fe st-good" title="12:00 🌱 反発期待">🌱</span><span class="fe st-good" title="12:15 🌱 反発期待">🌱</span><span class="fe st-good" title="12:30 🌱 反発期待">🌱</span><span class="fe st-good" title="12:45 🌱 反発期待">🌱</span><span class="fe st-good" title="13:00 🍃 回復中">🍃</span><span class="fe st-good" title="13:15 🍃 回復中">🍃</span><span class="fe st-warn" title="13:30 🔥 買われすぎ">🔥</span><span class="fe st-warn" title="13:45 🔥 買われすぎ">🔥</span><span class="fe st-bad" title="14:00 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="14:15 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="14:30 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="14:45 ⚠️ 急落注意">⚠️</span><span class="fe st-bad" title="15:00 ⚠️ 急落注意">⚠️</span><span class="fe st-good" title="15:15 🍃 回復中">🍃</span><span class="fe st-good" title="15:30 🍃 回復中">🍃</span><span class="fe st-warn" title="15:45 🔥 買われすぎ">🔥</span><span class="fe st-warn" title="16:00 🔥 買われすぎ">🔥</span></div>
 </div>
-<p class="foot">神話相場ライブ ／ 状態は叩き台ロジック（自動生成）</p>
-</div></body></html>
+<button class="dtoggle" onclick="toggleDetail(2)">📋 詳細履歴をひらく</button>
+<div class="detail" id="detail-2">
+<table class="dtable">
+<tr><th>時刻</th><th>価格</th><th>%R</th><th>K</th><th>D</th><th>状態</th></tr>
+<tr class="dr-warn">
+<td class="dt">16:00</td>
+<td>603.39</td>
+<td>-60</td>
+<td>87</td>
+<td>82</td>
+<td class="ds">🔥 買われすぎ</td></tr><tr class="dr-warn">
+<td class="dt">15:45</td>
+<td>603.78</td>
+<td>-61</td>
+<td>87</td>
+<td>70</td>
+<td class="ds">🔥 買われすぎ</td></tr><tr class="dr-good">
+<td class="dt">15:30</td>
+<td>604.98</td>
+<td>-55</td>
+<td>72</td>
+<td>58</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">15:15</td>
+<td>603.15</td>
+<td>-67</td>
+<td>51</td>
+<td>53</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-bad">
+<td class="dt">15:00</td>
+<td>600.75</td>
+<td>-83</td>
+<td>49</td>
+<td>56</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">14:45</td>
+<td>600.59</td>
+<td>-99</td>
+<td>58</td>
+<td>60</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">14:30</td>
+<td>604.65</td>
+<td>-84</td>
+<td>61</td>
+<td>64</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">14:15</td>
+<td>604.31</td>
+<td>-87</td>
+<td>62</td>
+<td>71</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">14:00</td>
+<td>603.20</td>
+<td>-99</td>
+<td>70</td>
+<td>79</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-warn">
+<td class="dt">13:45</td>
+<td>606.33</td>
+<td>-81</td>
+<td>81</td>
+<td>78</td>
+<td class="ds">🔥 買われすぎ</td></tr><tr class="dr-warn">
+<td class="dt">13:30</td>
+<td>608.89</td>
+<td>-66</td>
+<td>86</td>
+<td>68</td>
+<td class="ds">🔥 買われすぎ</td></tr><tr class="dr-good">
+<td class="dt">13:15</td>
+<td>608.03</td>
+<td>-71</td>
+<td>67</td>
+<td>50</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">13:00</td>
+<td>607.97</td>
+<td>-71</td>
+<td>50</td>
+<td>37</td>
+<td class="ds">🍃 回復中</td></tr><tr class="dr-good">
+<td class="dt">12:45</td>
+<td>611.04</td>
+<td>-85</td>
+<td>33</td>
+<td>28</td>
+<td class="ds">🌱 反発期待</td></tr><tr class="dr-good">
+<td class="dt">12:30</td>
+<td>609.42</td>
+<td>-88</td>
+<td>28</td>
+<td>22</td>
+<td class="ds">🌱 反発期待</td></tr><tr class="dr-good">
+<td class="dt">12:15</td>
+<td>612.28</td>
+<td>-83</td>
+<td>22</td>
+<td>16</td>
+<td class="ds">🌱 反発期待</td></tr><tr class="dr-good">
+<td class="dt">12:00</td>
+<td>606.55</td>
+<td>-93</td>
+<td>15</td>
+<td>14</td>
+<td class="ds">🌱 反発期待</td></tr><tr class="dr-bad">
+<td class="dt">11:45</td>
+<td>604.44</td>
+<td>-98</td>
+<td>13</td>
+<td>14</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">11:30</td>
+<td>604.27</td>
+<td>-99</td>
+<td>14</td>
+<td>16</td>
+<td class="ds">⚠️ 急落注意</td></tr><tr class="dr-bad">
+<td class="dt">11:15</td>
+<td>605.31</td>
+<td>-97</td>
+<td>16</td>
+<td>19</td>
+<td class="ds">⚠️ 急落注意</td></tr>
+</table>
+</div>
+</div>
+<p class="foot">神話相場ライブ ／ 状態は2軸スコア方式（自動生成）</p>
+</div>
+<script>
+function toggleDetail(i){
+  var el=document.getElementById('detail-'+i);
+  el.classList.toggle('open');
+  var btn=el.previousElementSibling;
+  btn.textContent=el.classList.contains('open')?'📋 詳細履歴をとじる':'📋 詳細履歴をひらく';
+}
+</script>
+</body></html>
