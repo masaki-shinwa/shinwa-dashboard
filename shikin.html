@@ -11,15 +11,17 @@
 --up:#2fa86a;--down:#e06a8a;--track:#f4eef3;--midline:#e0cede;
 --pos:#7fd4a8;--neg:#f095b0;
 --s:#2fa86a;--n:#9a8a98;--w:#d99a2e;--d:#e06a8a;
---s-top:#9fe3c4;--n-top:#e3d4e0;--w-top:#f5d79a;--d-top:#f4b0c4;}
+--s-top:#9fe3c4;--n-top:#e3d4e0;--w-top:#f5d79a;--d-top:#f4b0c4;
+--in-bg:#f0fbf5;--out-bg:#fdf0f4;--in-hd:#2fa86a;--out-hd:#e06a8a;}
 @media(prefers-color-scheme:dark){:root{--bg:#15101a;--card:#241b2b;--line:#3d2f44;--t1:#f0e8f2;--t2:#a99cae;--t3:#6f6276;--accent:#e8a8d8;
 --up:#5cd99a;--down:#f08aa8;--track:#2a2232;--midline:#473a50;
 --pos:#5cc99a;--neg:#e88aa6;
 --s:#5cd99a;--n:#a99cae;--w:#f0c878;--d:#f08aa8;
---s-top:#2c6b4f;--n-top:#473a50;--w-top:#6b5320;--d-top:#6b2f42;}}
+--s-top:#2c6b4f;--n-top:#473a50;--w-top:#6b5320;--d-top:#6b2f42;
+--in-bg:#16261d;--out-bg:#2a181f;--in-hd:#5cd99a;--out-hd:#f08aa8;}}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;padding:13px;}
-.wrap{max-width:560px;margin:0 auto;}
+.wrap{max-width:1100px;margin:0 auto;}
 .head{display:flex;align-items:center;gap:7px;margin-bottom:12px;}
 .htitle{font-size:19px;font-weight:800;}
 .nav{font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:15px;padding:6px 12px;text-decoration:none;box-shadow:0 3px 8px rgba(230,168,216,.4);}
@@ -27,6 +29,21 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 .timecard .tk{font-size:11px;color:var(--t3);}
 .timecard .tj{font-weight:700;}
 .timecard .te{font-weight:700;color:var(--accent);margin-left:auto;}
+.summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-bottom:15px;}
+.scol{border-radius:18px;padding:10px 12px;border:1.5px solid var(--line);box-shadow:0 3px 12px rgba(220,180,220,.15);}
+.scol-in{background:var(--in-bg);}
+.scol-out{background:var(--out-bg);}
+.shd{font-size:13px;font-weight:800;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed var(--line);}
+.shd-in{color:var(--in-hd);}
+.shd-out{color:var(--out-hd);}
+.srow{display:flex;align-items:center;gap:7px;padding:4px 2px;font-size:13px;}
+.srow.empty{color:var(--t3);font-size:11px;justify-content:center;padding:10px;}
+.rk{font-size:11px;font-weight:800;color:var(--t3);width:18px;text-align:center;}
+.rem{font-size:15px;}
+.rtkr{font-weight:800;flex:1;}
+.rrat{font-weight:800;font-size:13px;}
+.rrat.rin{color:var(--up);}
+.rrat.rout{color:var(--down);}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;}
 .card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:12px 13px;box-shadow:0 4px 14px rgba(220,180,220,.18);border-top:5px solid var(--line);}
 .card.c-s{border-top-color:var(--s-top);}
@@ -53,12 +70,29 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 .bn.up{color:var(--up);}.bn.down{color:var(--down);}
 .cont{font-size:9px;color:var(--t3);margin-top:7px;padding-top:6px;border-top:1px solid var(--line);}
 .foot{text-align:center;font-size:10px;color:var(--t3);margin-top:12px;}
+/* PC：ゆったり3〜4列 */
+@media(min-width:700px){
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media(min-width:1000px){
+.grid{grid-template-columns:repeat(4,minmax(0,1fr));}
+}
 </style></head>
 <body><div class="wrap">
 <div class="head"><span class="htitle">💖 神話資金フロー</span>
 <a class="nav" href="index.html" style="margin-left:auto;">🏠 司令塔</a>
 <a class="nav" href="live.html">⚡ ライブ</a></div>
-<div class="timecard"><span class="tk">🕒 更新</span><span class="tj">06/25 20:01 JST</span><span class="te">06/25 07:01 EDT</span></div>
+<div class="timecard"><span class="tk">🕒 更新</span><span class="tj">06/25 20:12 JST</span><span class="te">06/25 07:12 EDT</span></div>
+<div class="summary">
+<div class="scol scol-in">
+<div class="shd shd-in">🔥 大口流入 TOP10</div>
+<div class="srow"><span class="rk">1</span><span class="rem">📡</span><span class="rtkr">ADI</span><span class="rrat rin">+31.4%</span></div><div class="srow"><span class="rk">2</span><span class="rem">⚡</span><span class="rtkr">MPWR</span><span class="rrat rin">+31.1%</span></div><div class="srow"><span class="rk">3</span><span class="rem">🔎</span><span class="rtkr">ONTO</span><span class="rrat rin">+29.1%</span></div><div class="srow"><span class="rk">4</span><span class="rem">🦄</span><span class="rtkr">ALAB</span><span class="rrat rin">+21.7%</span></div><div class="srow"><span class="rk">5</span><span class="rem">💎</span><span class="rtkr">ENTG</span><span class="rrat rin">+21.4%</span></div><div class="srow"><span class="rk">6</span><span class="rem">🔧</span><span class="rtkr">LRCX</span><span class="rrat rin">+19.5%</span></div><div class="srow"><span class="rk">7</span><span class="rem">🔋</span><span class="rtkr">ON</span><span class="rrat rin">+16.9%</span></div><div class="srow"><span class="rk">8</span><span class="rem">🔗</span><span class="rtkr">CRDO</span><span class="rrat rin">+16.2%</span></div><div class="srow"><span class="rk">9</span><span class="rem">🎧</span><span class="rtkr">CRUS</span><span class="rrat rin">+13.7%</span></div><div class="srow"><span class="rk">10</span><span class="rem">🧪</span><span class="rtkr">TER</span><span class="rrat rin">+11.2%</span></div>
+</div>
+<div class="scol scol-out">
+<div class="shd shd-out">🔻 資金流出 TOP10</div>
+<div class="srow"><span class="rk">1</span><span class="rem">📶</span><span class="rtkr">SWKS</span><span class="rrat rout">-43.0%</span></div><div class="srow"><span class="rk">2</span><span class="rem">🔬</span><span class="rtkr">KLAC</span><span class="rrat rout">-16.9%</span></div><div class="srow"><span class="rk">3</span><span class="rem">🧩</span><span class="rtkr">LSCC</span><span class="rrat rout">-14.3%</span></div><div class="srow"><span class="rk">4</span><span class="rem">📻</span><span class="rtkr">QRVO</span><span class="rrat rout">-13.0%</span></div><div class="srow"><span class="rk">5</span><span class="rem">✏️</span><span class="rtkr">CDNS</span><span class="rrat rout">-12.2%</span></div><div class="srow"><span class="rk">6</span><span class="rem">🦋</span><span class="rtkr">MRVL</span><span class="rrat rout">-11.2%</span></div><div class="srow"><span class="rk">7</span><span class="rem">📦</span><span class="rtkr">AMKR</span><span class="rrat rout">-10.8%</span></div><div class="srow"><span class="rk">8</span><span class="rem">🛰️</span><span class="rtkr">MTSI</span><span class="rrat rout">-8.1%</span></div><div class="srow"><span class="rk">9</span><span class="rem">🌐</span><span class="rtkr">GFS</span><span class="rrat rout">-6.8%</span></div><div class="srow"><span class="rk">10</span><span class="rem">🏭</span><span class="rtkr">AMAT</span><span class="rrat rout">-6.4%</span></div>
+</div>
+</div>
 <div class="grid">
 <div class="card c-s">
 <div class="ctop">
