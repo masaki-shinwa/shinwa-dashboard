@@ -12,13 +12,17 @@
 --pos:#7fd4a8;--neg:#f095b0;
 --s:#2fa86a;--n:#9a8a98;--w:#d99a2e;--d:#e06a8a;
 --s-top:#9fe3c4;--n-top:#e3d4e0;--w-top:#f5d79a;--d-top:#f4b0c4;
---in-bg:#f0fbf5;--out-bg:#fdf0f4;--in-hd:#2fa86a;--out-hd:#e06a8a;}
+--in-bg:#f0fbf5;--out-bg:#fdf0f4;--in-hd:#2fa86a;--out-hd:#e06a8a;
+--surge:#ff6600;--jup:#2fa86a;--jflat:#9a8a98;--jdown:#e06a8a;
+--surge-bg:#fff0e6;--jup-bg:#eefaf2;--jflat-bg:#f3f0f3;--jdown-bg:#fdf0f3;}
 @media(prefers-color-scheme:dark){:root{--bg:#15101a;--card:#241b2b;--line:#3d2f44;--t1:#f0e8f2;--t2:#a99cae;--t3:#6f6276;--accent:#e8a8d8;
 --up:#5cd99a;--down:#f08aa8;--track:#2a2232;--midline:#473a50;
 --pos:#5cc99a;--neg:#e88aa6;
 --s:#5cd99a;--n:#a99cae;--w:#f0c878;--d:#f08aa8;
 --s-top:#2c6b4f;--n-top:#473a50;--w-top:#6b5320;--d-top:#6b2f42;
---in-bg:#16261d;--out-bg:#2a181f;--in-hd:#5cd99a;--out-hd:#f08aa8;}}
+--in-bg:#16261d;--out-bg:#2a181f;--in-hd:#5cd99a;--out-hd:#f08aa8;
+--surge:#ff8c42;--jup:#5cd99a;--jflat:#a99cae;--jdown:#f08aa8;
+--surge-bg:#3a2415;--jup-bg:#16261d;--jflat-bg:#2a2232;--jdown-bg:#2a181f;}}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;padding:13px;}
 .wrap{max-width:1100px;margin:0 auto;}
@@ -41,6 +45,8 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 .rk{font-size:11px;font-weight:800;color:var(--t3);width:18px;text-align:center;}
 .rem{font-size:15px;}
 .rtkr{font-weight:800;flex:1;}
+.surge{font-size:13px;font-weight:800;color:var(--surge);}
+.surge.up{color:var(--jup);}
 .rrat{font-weight:800;font-size:13px;}
 .rrat.rin{color:var(--up);}
 .rrat.rout{color:var(--down);}
@@ -55,8 +61,13 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 .emoji{font-size:16px;}
 .tkr{font-size:16px;font-weight:800;}
 .ratio{font-size:16px;font-weight:800;margin-left:auto;}
-.lab{font-size:11px;font-weight:700;margin-bottom:7px;padding-bottom:7px;border-bottom:1.5px dashed var(--line);}
+.lab{font-size:11px;font-weight:700;margin-bottom:6px;padding-bottom:6px;border-bottom:1.5px dashed var(--line);}
 .c-s{color:var(--s);}.c-n{color:var(--n);}.c-w{color:var(--w);}.c-d{color:var(--d);}
+.jump{font-size:10px;font-weight:800;margin-bottom:7px;padding:3px 7px;border-radius:8px;display:inline-block;}
+.jump.jsurge{color:var(--surge);background:var(--surge-bg);}
+.jump.jup{color:var(--jup);background:var(--jup-bg);}
+.jump.jflat{color:var(--jflat);background:var(--jflat-bg);}
+.jump.jdown{color:var(--jdown);background:var(--jdown-bg);}
 .bars{display:flex;flex-direction:column;gap:4px;}
 .brow{display:flex;align-items:center;gap:3px;}
 .bl{font-size:9px;width:30px;color:var(--t3);font-weight:700;}
@@ -82,7 +93,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <div class="head"><span class="htitle">💖 神話資金フロー</span>
 <a class="nav" href="index.html" style="margin-left:auto;">🏠 司令塔</a>
 <a class="nav" href="live.html">⚡ ライブ</a></div>
-<div class="timecard"><span class="tk">🕒 更新</span><span class="tj">06/25 20:12 JST</span><span class="te">06/25 07:12 EDT</span></div>
+<div class="timecard"><span class="tk">🕒 更新</span><span class="tj">06/25 20:25 JST</span><span class="te">06/25 07:25 EDT</span></div>
 <div class="summary">
 <div class="scol scol-in">
 <div class="shd shd-in">🔥 大口流入 TOP10</div>
@@ -101,6 +112,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-s">+31.4%</span>
 </div>
 <div class="lab c-s">🟢 大口買い</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos" style="width:1.3241546443653711%"></div><div class="mid"></div></div><span class="bn up">+22</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos" style="width:0.6604712423086183%"></div><div class="mid"></div></div><span class="bn up">+11</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg" style="width:0.7527350892052832%"></div><div class="mid"></div></div><span class="bn down">-13</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:3.319160568396209%"></div><div class="mid"></div></div><span class="bn up">+55</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -111,6 +123,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-s">+31.1%</span>
 </div>
 <div class="lab c-s">🟢 大口買い</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos" style="width:0.87616164703163%"></div><div class="mid"></div></div><span class="bn up">+15</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos faint" style="width:0.1139937818233234%"></div><div class="mid"></div></div><span class="bn up">+2</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:0.36165253664842384%"></div><div class="mid"></div></div><span class="bn up">+6</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:1.5967096140227277%"></div><div class="mid"></div></div><span class="bn up">+27</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -121,6 +134,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-s">+29.1%</span>
 </div>
 <div class="lab c-s">🟢 大口買い</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.01936192080938427%"></div><div class="mid"></div></div><span class="bn up">+0</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos faint" style="width:0.18859006792089236%"></div><div class="mid"></div></div><span class="bn up">+3</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos faint" style="width:0.23289725160815594%"></div><div class="mid"></div></div><span class="bn up">+4</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos faint" style="width:0.18119396491089348%"></div><div class="mid"></div></div><span class="bn up">+3</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -131,6 +145,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-s">+21.7%</span>
 </div>
 <div class="lab c-s">◎ 本物寄り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos" style="width:0.37738953999783204%"></div><div class="mid"></div></div><span class="bn up">+6</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos" style="width:0.690580862147058%"></div><div class="mid"></div></div><span class="bn up">+11</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:1.2321570256225547%"></div><div class="mid"></div></div><span class="bn up">+21</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg" style="width:0.39665500737888154%"></div><div class="mid"></div></div><span class="bn down">-7</span></div></div>
 <div class="cont">📅 買→買</div>
 </div>
@@ -141,6 +156,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-s">+21.4%</span>
 </div>
 <div class="lab c-s">🟢 大口買い</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg faint" style="width:0.14013400033199483%"></div><div class="mid"></div></div><span class="bn down">-2</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos" style="width:0.5329796869616445%"></div><div class="mid"></div></div><span class="bn up">+9</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:0.45135197274625727%"></div><div class="mid"></div></div><span class="bn up">+8</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:0.3668734186403323%"></div><div class="mid"></div></div><span class="bn up">+6</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -151,6 +167,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-s">+19.5%</span>
 </div>
 <div class="lab c-s">🟢 大口買い</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.24079969784376096%"></div><div class="mid"></div></div><span class="bn up">+4</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos" style="width:1.9507198858351413%"></div><div class="mid"></div></div><span class="bn up">+32</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:2.802016809087411%"></div><div class="mid"></div></div><span class="bn up">+47</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:3.152080031083281%"></div><div class="mid"></div></div><span class="bn up">+52</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -161,6 +178,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-s">+16.9%</span>
 </div>
 <div class="lab c-s">🟢 大口買い</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg faint" style="width:0.045664292231883764%"></div><div class="mid"></div></div><span class="bn down">-1</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos" style="width:0.5662131962072804%"></div><div class="mid"></div></div><span class="bn up">+9</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:1.5110543512752843%"></div><div class="mid"></div></div><span class="bn up">+25</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:0.5615089943488032%"></div><div class="mid"></div></div><span class="bn up">+9</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -171,6 +189,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-s">+16.2%</span>
 </div>
 <div class="lab c-s">◎ 本物寄り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.19264562609408328%"></div><div class="mid"></div></div><span class="bn up">+3</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos" style="width:0.5806918059488491%"></div><div class="mid"></div></div><span class="bn up">+10</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos faint" style="width:0.2778632928766057%"></div><div class="mid"></div></div><span class="bn up">+5</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg" style="width:1.0788181390748386%"></div><div class="mid"></div></div><span class="bn down">-18</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -181,6 +200,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-s">+13.7%</span>
 </div>
 <div class="lab c-s">🟢 大口買い</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.009347899156675096%"></div><div class="mid"></div></div><span class="bn up">+0</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos faint" style="width:0.008369273728069329%"></div><div class="mid"></div></div><span class="bn up">+0</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos faint" style="width:0.10915257568836455%"></div><div class="mid"></div></div><span class="bn up">+2</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos faint" style="width:0.08372656357707577%"></div><div class="mid"></div></div><span class="bn up">+1</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -191,6 +211,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-s">+11.2%</span>
 </div>
 <div class="lab c-s">🟢 大口買い</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.245604236629677%"></div><div class="mid"></div></div><span class="bn up">+4</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos faint" style="width:0.04737269206735447%"></div><div class="mid"></div></div><span class="bn up">+1</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:0.39796292533548044%"></div><div class="mid"></div></div><span class="bn up">+7</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:1.5253829999850126%"></div><div class="mid"></div></div><span class="bn up">+25</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -201,6 +222,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-n">+4.1%</span>
 </div>
 <div class="lab c-n">🌱 やや買い</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos" style="width:0.4128788776866806%"></div><div class="mid"></div></div><span class="bn up">+7</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos" style="width:0.5520015674140832%"></div><div class="mid"></div></div><span class="bn up">+9</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:3.3215402396812013%"></div><div class="mid"></div></div><span class="bn up">+55</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:11.500017009580647%"></div><div class="mid"></div></div><span class="bn up">+191</span></div></div>
 <div class="cont">📅 買→買</div>
 </div>
@@ -211,6 +233,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-n">+3.7%</span>
 </div>
 <div class="lab c-n">🌱 やや買い</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg" style="width:0.3539418839725039%"></div><div class="mid"></div></div><span class="bn down">-6</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos" style="width:0.5438072742738044%"></div><div class="mid"></div></div><span class="bn up">+9</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos faint" style="width:0.16632142254872184%"></div><div class="mid"></div></div><span class="bn up">+3</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg faint" style="width:0.04977515787676543%"></div><div class="mid"></div></div><span class="bn down">-1</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -221,6 +244,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-n">+2.9%</span>
 </div>
 <div class="lab c-n">⚪ 中立</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.010361992943637299%"></div><div class="mid"></div></div><span class="bn up">+0</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos" style="width:0.6040237971719182%"></div><div class="mid"></div></div><span class="bn up">+10</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:0.8274614893490753%"></div><div class="mid"></div></div><span class="bn up">+14</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:4.652413962110344%"></div><div class="mid"></div></div><span class="bn up">+77</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -231,6 +255,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-n">+2.0%</span>
 </div>
 <div class="lab c-n">⚪ 中立</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg" style="width:4.412638167097789%"></div><div class="mid"></div></div><span class="bn down">-73</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos" style="width:7.431575209848951%"></div><div class="mid"></div></div><span class="bn up">+124</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:15.867924259815213%"></div><div class="mid"></div></div><span class="bn up">+264</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:50%"></div><div class="mid"></div></div><span class="bn up">+832</span></div></div>
 <div class="cont">📅 買→買</div>
 </div>
@@ -241,6 +266,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-n">+1.8%</span>
 </div>
 <div class="lab c-n">⚪ 中立</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.16780942852181197%"></div><div class="mid"></div></div><span class="bn up">+3</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg faint" style="width:0.04890086885565693%"></div><div class="mid"></div></div><span class="bn down">-1</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg faint" style="width:0.08019935153881695%"></div><div class="mid"></div></div><span class="bn down">-1</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos faint" style="width:0.2564002669059947%"></div><div class="mid"></div></div><span class="bn up">+4</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -251,6 +277,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-n">-0.3%</span>
 </div>
 <div class="lab c-n">⚪ 中立</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg" style="width:0.31204492149476215%"></div><div class="mid"></div></div><span class="bn down">-5</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos faint" style="width:0.2152376203007926%"></div><div class="mid"></div></div><span class="bn up">+4</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg" style="width:2.6366768800020557%"></div><div class="mid"></div></div><span class="bn down">-44</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg" style="width:6.935535471164306%"></div><div class="mid"></div></div><span class="bn down">-115</span></div></div>
 <div class="cont">📅 売→売</div>
 </div>
@@ -261,6 +288,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-n">-0.8%</span>
 </div>
 <div class="lab c-n">⚪ 中立</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.12272351480626194%"></div><div class="mid"></div></div><span class="bn up">+2</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg faint" style="width:0.13262384669820682%"></div><div class="mid"></div></div><span class="bn down">-2</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg" style="width:0.30371750403157355%"></div><div class="mid"></div></div><span class="bn down">-5</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg" style="width:1.6484267742657397%"></div><div class="mid"></div></div><span class="bn down">-27</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -271,6 +299,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-n">-1.1%</span>
 </div>
 <div class="lab c-n">⚪ 中立</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg" style="width:0.5268006320915588%"></div><div class="mid"></div></div><span class="bn down">-9</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos faint" style="width:0.05695887343612515%"></div><div class="mid"></div></div><span class="bn up">+1</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg" style="width:1.9121984231715745%"></div><div class="mid"></div></div><span class="bn down">-32</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg faint" style="width:0.16249781462839608%"></div><div class="mid"></div></div><span class="bn down">-3</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -281,6 +310,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-n">-3.7%</span>
 </div>
 <div class="lab c-n">⚪ 中立</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.01879236597992201%"></div><div class="mid"></div></div><span class="bn up">+0</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg faint" style="width:0.24860027632350165%"></div><div class="mid"></div></div><span class="bn down">-4</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:0.30981278609785756%"></div><div class="mid"></div></div><span class="bn up">+5</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos faint" style="width:0.06945163706566476%"></div><div class="mid"></div></div><span class="bn up">+1</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -291,6 +321,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-n">-4.6%</span>
 </div>
 <div class="lab c-n">⚪ 中立</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg" style="width:2.0092890580277127%"></div><div class="mid"></div></div><span class="bn down">-33</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg" style="width:4.5493258664103235%"></div><div class="mid"></div></div><span class="bn down">-76</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg" style="width:5.607413467455116%"></div><div class="mid"></div></div><span class="bn down">-93</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg" style="width:15.25456165435035%"></div><div class="mid"></div></div><span class="bn down">-254</span></div></div>
 <div class="cont">📅 売→売</div>
 </div>
@@ -301,6 +332,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-w">-6.4%</span>
 </div>
 <div class="lab c-w">⚠️ やや売り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg" style="width:0.7950343964083414%"></div><div class="mid"></div></div><span class="bn down">-13</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg faint" style="width:0.04921568125149421%"></div><div class="mid"></div></div><span class="bn down">-1</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg" style="width:0.5154714973963509%"></div><div class="mid"></div></div><span class="bn down">-9</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:6.145019718202948%"></div><div class="mid"></div></div><span class="bn up">+102</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -311,6 +343,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-w">-6.8%</span>
 </div>
 <div class="lab c-w">⚠️ やや売り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.0624903874015048%"></div><div class="mid"></div></div><span class="bn up">+1</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg faint" style="width:0.14968140169552185%"></div><div class="mid"></div></div><span class="bn down">-2</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg faint" style="width:0.15285314760928123%"></div><div class="mid"></div></div><span class="bn down">-3</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg faint" style="width:0.07121491374094652%"></div><div class="mid"></div></div><span class="bn down">-1</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -321,6 +354,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-w">-8.1%</span>
 </div>
 <div class="lab c-w">⚠️ やや売り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg faint" style="width:0.06861670224567429%"></div><div class="mid"></div></div><span class="bn down">-1</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg faint" style="width:0.014369557596493833%"></div><div class="mid"></div></div><span class="bn down">-0</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos faint" style="width:0.16544283105482036%"></div><div class="mid"></div></div><span class="bn up">+3</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg faint" style="width:0.07450403995351254%"></div><div class="mid"></div></div><span class="bn down">-1</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -331,6 +365,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-d">-10.8%</span>
 </div>
 <div class="lab c-d">🔻 大口売り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg faint" style="width:0.04152220697761908%"></div><div class="mid"></div></div><span class="bn down">-1</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg faint" style="width:0.10433851216178065%"></div><div class="mid"></div></div><span class="bn down">-2</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos faint" style="width:0.06464551354722167%"></div><div class="mid"></div></div><span class="bn up">+1</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:0.4072894999812786%"></div><div class="mid"></div></div><span class="bn up">+7</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -341,6 +376,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-d">-11.2%</span>
 </div>
 <div class="lab c-d">🔻 大口売り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg" style="width:4.077694144462677%"></div><div class="mid"></div></div><span class="bn down">-68</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg" style="width:0.7345672899253096%"></div><div class="mid"></div></div><span class="bn down">-12</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg" style="width:1.9018310524975115%"></div><div class="mid"></div></div><span class="bn down">-32</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg" style="width:1.6862644061845498%"></div><div class="mid"></div></div><span class="bn down">-28</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -351,6 +387,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-d">-12.2%</span>
 </div>
 <div class="lab c-d">🔻 大口売り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.12516918111785566%"></div><div class="mid"></div></div><span class="bn up">+2</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg faint" style="width:0.23752061221669316%"></div><div class="mid"></div></div><span class="bn down">-4</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:0.49605149158171963%"></div><div class="mid"></div></div><span class="bn up">+8</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:0.664806654054275%"></div><div class="mid"></div></div><span class="bn up">+11</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -361,6 +398,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-d">-13.0%</span>
 </div>
 <div class="lab c-d">🔻 大口売り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg" style="width:0.5059016742699948%"></div><div class="mid"></div></div><span class="bn down">-8</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos faint" style="width:0.2674607728218568%"></div><div class="mid"></div></div><span class="bn up">+4</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos" style="width:0.33722159756757847%"></div><div class="mid"></div></div><span class="bn up">+6</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos faint" style="width:0.08233799378606571%"></div><div class="mid"></div></div><span class="bn up">+1</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -371,6 +409,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-d">-14.3%</span>
 </div>
 <div class="lab c-d">🔻 大口売り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg pos faint" style="width:0.011117970212668669%"></div><div class="mid"></div></div><span class="bn up">+0</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg faint" style="width:0.08434744472676559%"></div><div class="mid"></div></div><span class="bn down">-1</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg faint" style="width:0.09451486609641113%"></div><div class="mid"></div></div><span class="bn down">-2</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg faint" style="width:0.038966716796893126%"></div><div class="mid"></div></div><span class="bn down">-1</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -381,6 +420,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-d">-16.9%</span>
 </div>
 <div class="lab c-d">🔻 大口売り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg" style="width:1.0450769338329797%"></div><div class="mid"></div></div><span class="bn down">-17</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg pos faint" style="width:0.02257675316737173%"></div><div class="mid"></div></div><span class="bn up">+0</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg neg faint" style="width:0.03600160639950076%"></div><div class="mid"></div></div><span class="bn down">-1</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg pos" style="width:9.146259067822022%"></div><div class="mid"></div></div><span class="bn up">+152</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div>
@@ -391,8 +431,9 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <span class="ratio c-d">-43.0%</span>
 </div>
 <div class="lab c-d">🔻 大口売り</div>
+<div class="jump jflat">⏱ 初回</div>
 <div class="bars"><div class="brow"><span class="bl">超大口</span><div class="track"><div class="seg neg" style="width:0.6552446008106271%"></div><div class="mid"></div></div><span class="bn down">-11</span></div><div class="brow"><span class="bl">大口</span><div class="track"><div class="seg neg" style="width:0.6709401234210566%"></div><div class="mid"></div></div><span class="bn down">-11</span></div><div class="brow"><span class="bl">中口</span><div class="track"><div class="seg pos faint" style="width:0.009293573436731355%"></div><div class="mid"></div></div><span class="bn up">+0</span></div><div class="brow"><span class="bl">小口</span><div class="track"><div class="seg neg faint" style="width:0.028532037266364642%"></div><div class="mid"></div></div><span class="bn down">-0</span></div></div>
 <div class="cont">📅 履歴1日</div>
 </div></div>
-<p class="foot">💕 大口主導度＝案A（超大口＋大口の傾き）／単位M$ ／前日累計</p>
+<p class="foot">💕 大口主導度＝案A／⏱前回比＝日中の跳ね／📅前日累計の連続性／単位M$</p>
 </div></body></html>
