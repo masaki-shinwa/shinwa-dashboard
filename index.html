@@ -5,129 +5,141 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>神話ver2 司令塔</title>
+<title>神話 司令塔</title>
 <style>
-:root{--bg:#f4f4f2;--card:#fff;--line:#e3e3df;--t1:#1a1a1a;--t2:#6b6b66;--t3:#9b9b95;--blue:#185fa5;
---up:#1e7d50;--down:#c0392b;
---good-bg:#e3f6ec;--good-fg:#1e7d50;--warn-bg:#fdf3da;--warn-fg:#8a5a00;--bad-bg:#fdecea;--bad-fg:#c0392b;--neu-bg:#efeee9;--neu-fg:#444;}
-@media(prefers-color-scheme:dark){:root{--bg:#0d0d0f;--card:#1a1a1d;--line:#2a2a2e;--t1:#ececec;--t2:#9a9a9a;--t3:#6a6a6a;--blue:#5aa6ef;
---up:#4cd187;--down:#f0817a;
---good-bg:#10331f;--good-fg:#4cd187;--warn-bg:#3a2e0e;--warn-fg:#f0c64c;--bad-bg:#3a1714;--bad-fg:#f0817a;--neu-bg:#222226;--neu-fg:#bcbcbc;}}
+:root{--bg:#fbf7fb;--card:#fff;--line:#f6e3f0;--t1:#5a4a58;--t2:#9a8a98;--t3:#b8acb8;--accent:#e6a8d8;
+--track:#f4eef3;--midline:#e0cede;--pos:#7fd4a8;--neg:#f095b0;
+--s:#2fa86a;--n:#9a8a98;--w:#d99a2e;--d:#e06a8a;
+--s-top:#9fe3c4;--n-top:#e3d4e0;--w-top:#f5d79a;--d-top:#f4b0c4;
+--cup:#2fa86a;--cdown:#e06a8a;--cup-bg:#eefaf2;--cdown-bg:#fdf0f4;}
+@media(prefers-color-scheme:dark){:root{--bg:#15101a;--card:#241b2b;--line:#3d2f44;--t1:#f0e8f2;--t2:#a99cae;--t3:#6f6276;--accent:#e8a8d8;
+--track:#2a2232;--midline:#473a50;--pos:#5cc99a;--neg:#e88aa6;
+--s:#5cd99a;--n:#a99cae;--w:#f0c878;--d:#f08aa8;
+--s-top:#2c6b4f;--n-top:#473a50;--w-top:#6b5320;--d-top:#6b2f42;
+--cup:#5cd99a;--cdown:#f08aa8;--cup-bg:#16261d;--cdown-bg:#2a181f;}}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;padding:11px;}
-.wrap{max-width:860px;margin:0 auto;}
-.head{display:flex;align-items:center;gap:8px;margin-bottom:9px;font-size:15px;font-weight:600;}
-.livebtn{margin-left:auto;font-size:12px;font-weight:700;color:#fff;background:var(--blue);border-radius:8px;padding:5px 12px;text-decoration:none;}
-.timecard{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:8px 12px;margin-bottom:9px;font-size:13px;}
+body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;padding:13px;}
+.wrap{max-width:1100px;margin:0 auto;}
+.head{display:flex;align-items:center;gap:7px;margin-bottom:12px;}
+.htitle{font-size:19px;font-weight:800;}
+.nav{font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:15px;padding:6px 12px;text-decoration:none;box-shadow:0 3px 8px rgba(230,168,216,.4);}
+.timecard{display:flex;align-items:center;gap:9px;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:8px 14px;margin-bottom:13px;font-size:12px;box-shadow:0 3px 12px rgba(220,180,220,.15);}
 .timecard .tk{font-size:11px;color:var(--t3);}
-.timecard .tj{font-weight:600;}
-.timecard .te{font-weight:600;color:var(--blue);margin-left:auto;}
-.sec{font-size:11px;color:var(--t2);font-weight:700;margin:6px 2px 7px;padding-bottom:4px;border-bottom:2px solid var(--line);}
-.hwrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
-@media(max-width:560px){.hwrap{grid-template-columns:1fr;}}
-.hcard{border-radius:12px;padding:12px 13px;border:1px solid var(--line);background:var(--card);}
-.hcard.hon{border:1.5px solid var(--up);background:var(--good-bg);}
-.hhead{display:flex;align-items:center;gap:8px;margin-bottom:2px;}
-.hkbn{font-size:11px;font-weight:700;}
-.htkr{font-size:17px;font-weight:700;}
-.hrank{margin-left:auto;font-size:11px;font-weight:700;background:var(--blue);color:#fff;border-radius:6px;padding:1px 7px;}
-.hname{font-size:11px;color:var(--t2);margin-bottom:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.hmetrics{display:flex;gap:12px;margin-bottom:8px;}
-.hm{display:flex;flex-direction:column;}
-.hm b{font-size:15px;font-weight:700;}
-.hm b.up{color:var(--up);}.hm b.down{color:var(--down);}
-.hm i{font-size:9px;color:var(--t3);font-style:normal;}
-.hlevels{display:flex;flex-direction:column;gap:2px;font-size:11px;color:var(--t2);}
-.hlevels b{color:var(--t1);}
-.hlevels .up b{color:var(--up);}.hlevels .down b{color:var(--down);}
-.hempty{background:var(--card);border:1px dashed var(--line);border-radius:10px;padding:14px;text-align:center;font-size:12px;color:var(--t3);margin-bottom:12px;}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;}
-@media(max-width:560px){.cols{grid-template-columns:1fr;}}
-.colttl{font-size:12px;color:var(--t2);font-weight:700;margin:0 2px 7px;padding-bottom:5px;border-bottom:2px solid var(--line);}
-.badge{border-radius:12px;padding:12px 14px;margin-bottom:9px;}
-.badge .btop{display:flex;align-items:center;gap:7px;margin:0 0 4px;flex-wrap:wrap;}
-.ttag{font-size:10px;font-weight:700;padding:1px 7px;border-radius:6px;background:rgba(0,0,0,.10);}
-.badge .bname{font-size:15px;font-weight:600;line-height:1.25;}
-.badge .bdetail{font-size:12px;line-height:1.5;margin:0;opacity:.92;}
-.badge.warn{background:var(--warn-bg);}.badge.warn .bname,.badge.warn .bdetail,.badge.warn .ttag{color:var(--warn-fg);}
-.badge.bad{background:var(--bad-bg);}.badge.bad .bname,.badge.bad .bdetail,.badge.bad .ttag{color:var(--bad-fg);}
-.badge.good{background:var(--good-bg);}.badge.good .bname,.badge.good .bdetail,.badge.good .ttag{color:var(--good-fg);}
-.badge.neutral{background:var(--neu-bg);}.badge.neutral .bname,.badge.neutral .bdetail,.badge.neutral .ttag{color:var(--neu-fg);}
-.divwarn{background:var(--bad-bg);color:var(--bad-fg);border-radius:10px;padding:9px 12px;font-size:11px;font-weight:600;line-height:1.45;margin-bottom:9px;}
-.subttl{font-size:11px;color:var(--t2);font-weight:600;margin:2px 2px 6px;}
-.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:9px;}
-.cell{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 6px;text-align:center;}
-.cell .cl{font-size:10px;color:var(--t2);margin:0 0 2px;white-space:nowrap;}
-.cell .cv{font-size:16px;font-weight:600;margin:0 0 4px;}
-.cv.up{color:var(--up);}.cv.down{color:var(--down);}.cv.flat{color:var(--t1);}
-.chip{display:inline-block;font-size:10px;font-weight:600;padding:1px 5px;border-radius:6px;}
-.chip.good{background:var(--good-bg);color:var(--good-fg);}
-.chip.warn{background:var(--warn-bg);color:var(--warn-fg);}
-.chip.bad{background:var(--bad-bg);color:var(--bad-fg);}
-.regime{border-radius:10px;padding:9px 13px;font-size:12px;font-weight:600;margin-bottom:9px;}
-.regime.good{background:var(--good-bg);color:var(--good-fg);}
-.regime.warn{background:var(--warn-bg);color:var(--warn-fg);}
-.regime.bad{background:var(--bad-bg);color:var(--bad-fg);}
-.vbadge{display:flex;flex-direction:column;gap:3px;border-radius:10px;padding:10px 13px;margin-bottom:8px;}
-.vbadge .vbname{font-size:13px;font-weight:700;}
-.vbadge .vbdetail{font-size:11px;line-height:1.45;opacity:.92;}
-.vbadge.good{background:var(--good-bg);}.vbadge.good .vbname,.vbadge.good .vbdetail{color:var(--good-fg);}
-.vbadge.warn{background:var(--warn-bg);}.vbadge.warn .vbname,.vbadge.warn .vbdetail{color:var(--warn-fg);}
-.vbadge.bad{background:var(--bad-bg);}.vbadge.bad .vbname,.vbadge.bad .vbdetail{color:var(--bad-fg);}
-.vbadge.neutral{background:var(--neu-bg);}.vbadge.neutral .vbname,.vbadge.neutral .vbdetail{color:var(--neu-fg);}
-.vtable{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:3px 11px;}
-.vrow{display:flex;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--line);}
-.vrow:last-child{border-bottom:none;}
-.vrow.vhead{color:var(--t3);font-size:10px;font-weight:600;}
-.vrow.tgt{background:rgba(24,95,165,.06);border-radius:5px;}
-.vrank{width:20px;color:var(--t3);}
-.vtkr{flex:1.5;font-weight:600;}
-.vrvol{flex:1;text-align:right;font-weight:600;}
-.vchg{flex:1;text-align:right;}
-.vchg.up{color:var(--up);}.vchg.down{color:var(--down);}.vchg.flat{color:var(--t1);}
-.insight{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:12px 14px;margin-top:12px;}
-.insight .it{font-size:11px;color:var(--t3);margin:0 0 5px;}
-.insight .ib{font-size:12px;line-height:1.6;margin:0;color:var(--t1);}
-.foot{text-align:center;font-size:10px;color:var(--t3);margin-top:8px;}
+.timecard .tj{font-weight:700;}
+.timecard .te{font-weight:700;color:var(--accent);margin-left:auto;}
+.lead{font-size:12px;color:var(--t2);margin-bottom:13px;font-weight:600;}
+.grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:11px;}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:13px 15px;box-shadow:0 4px 14px rgba(220,180,220,.18);border-top:5px solid var(--line);}
+.card.c-s{border-top-color:var(--s-top);}
+.card.c-n{border-top-color:var(--n-top);}
+.card.c-w{border-top-color:var(--w-top);}
+.card.c-d{border-top-color:var(--d-top);}
+.card.c-ng{opacity:.5;}
+.ctop{display:flex;align-items:center;gap:7px;margin-bottom:3px;}
+.emoji{font-size:18px;}
+.sec{font-size:16px;font-weight:800;}
+.score{font-size:18px;font-weight:800;margin-left:auto;}
+.lab{font-size:12px;font-weight:700;margin-bottom:8px;}
+.c-s{color:var(--s);}.c-n{color:var(--n);}.c-w{color:var(--w);}.c-d{color:var(--d);}
+.track{height:14px;background:var(--track);border-radius:7px;position:relative;overflow:hidden;margin-bottom:9px;}
+.mid{position:absolute;left:50%;top:0;width:1.5px;height:100%;background:var(--midline);}
+.seg{position:absolute;top:0;height:100%;}
+.seg.pos{left:50%;background:var(--pos);border-radius:0 6px 6px 0;}
+.seg.neg{right:50%;background:var(--neg);border-radius:6px 0 0 6px;}
+.chips{display:flex;flex-wrap:wrap;gap:5px;}
+.chip{font-size:10px;font-weight:700;padding:3px 7px;border-radius:9px;}
+.chip.cup{color:var(--cup);background:var(--cup-bg);}
+.chip.cdown{color:var(--cdown);background:var(--cdown-bg);}
+.foot{text-align:center;font-size:10px;color:var(--t3);margin-top:14px;}
+@media(min-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 </style></head>
 <body><div class="wrap">
-<div class="head">📊 神話ver2 司令塔<a class="livebtn" href="live.html">⚡ ライブ</a></div>
-
-<div class="timecard"><span class="tk">取得</span><span class="tj">06/24 19:46 JST</span><span class="te">06/24 06:46 EDT</span></div>
-
-<p class="sec">🎯 本命IN（判断AI・同時保有3枠）</p><div class="hwrap"><div class="hempty">本命INなし（IN条件を満たす銘柄が現在ありません）</div></div>
-
-<div class="cols">
-<div class="col-left">
-<p class="colttl">🧭 地合い判定</p>
-<div class="badge neutral">
-<p class="btop"><span class="ttag">プレ</span><span class="bname">💤 全待機</span></p>
-<p class="bdetail">出番なし・ノイズもみ合い</p>
-</div>
-
-<p class="subttl">📊 表面の株価</p>
+<div class="head"><span class="htitle">🧭 神話 司令塔</span>
+<a class="nav" href="pre.html" style="margin-left:auto;">🌅 プレ</a>
+<a class="nav" href="live.html">⚡ ライブ</a>
+<a class="nav" href="shikin.html">💰 資金</a></div>
+<div class="timecard"><span class="tk">🕒 更新</span><span class="tj">06/26 20:45 JST</span><span class="te">06/26 07:45 EDT</span></div>
+<div class="lead">市場全体・大口がどのセクターへ向かっているか（流入が強い順）</div>
 <div class="grid">
-<div class="cell"><p class="cl">QQQ</p><p class="cv down">-0.33%</p><span class="chip good">🟢 横ばい</span></div>
-<div class="cell"><p class="cl">SPY</p><p class="cv down">-0.20%</p><span class="chip good">🟢 横ばい</span></div>
-<div class="cell"><p class="cl">SOXX</p><p class="cv down">-0.55%</p><span class="chip good">🟢 横ばい</span></div>
+<div class="card c-s">
+<div class="ctop">
+<span class="emoji">🚀</span>
+<span class="sec">⑥宇宙・防衛</span>
+<span class="score c-s">+22.6%</span>
 </div>
-<p class="subttl">⚖️ 裏の大口資金</p>
-<div class="grid">
-<div class="cell"><p class="cl">原油</p><p class="cv up">+0.92%</p><span class="chip good">🟢 安定</span></div>
-<div class="cell"><p class="cl">金利</p><p class="cv down">-0.35%</p><span class="chip good">🟢 金利低下</span></div>
-<div class="cell"><p class="cl">VIX</p><p class="cv flat">19.17</p><span class="chip good">🟢 安定</span></div>
+<div class="lab c-s">🟢 大口流入</div>
+<div class="track"><div class="seg pos" style="width:50%"></div><div class="mid"></div></div>
+<div class="chips"><span class="chip cup">RTX +51</span><span class="chip cup">LMT +11</span><span class="chip cup">RKLB +6</span></div>
 </div>
-<div class="regime good">VIX：🟢 通常（20未満）</div>
+<div class="card c-n">
+<div class="ctop">
+<span class="emoji">📱</span>
+<span class="sec">④消費電子</span>
+<span class="score c-n">-0.6%</span>
 </div>
-<div class="col-right">
-<p class="colttl">🔬 出来高裏付け（実弾チェック）</p>
-<div class="vbadge bad"><span class="vbname">🔴 裏付けなし（罠警戒）</span><span class="vbdetail">出来高上位10に半導体が不在。物語に実弾が伴っていない。</span></div><div class="vtable"><div class="vrow vhead"><span class="vrank">#</span><span class="vtkr">銘柄</span><span class="vrvol">出来高倍</span><span class="vchg">前日比</span></div></div>
+<div class="lab c-n">⚪ 中立</div>
+<div class="track"><div class="seg neg" style="width:1.3421875240898173%"></div><div class="mid"></div></div>
+<div class="chips"><span class="chip cup">SONY +19</span><span class="chip cup">TSLA +3</span><span class="chip cdown">AAPL -23</span></div>
 </div>
+<div class="card c-n">
+<div class="ctop">
+<span class="emoji">🔲</span>
+<span class="sec">①半導体</span>
+<span class="score c-n">-0.9%</span>
 </div>
-
-<div class="insight">
-<p class="it">🧭 指揮官への戦略インサイト</p>
-<p class="ib">方向感なし。様子見継続。明確なブレイクまで新規INは控える。</p>
+<div class="lab c-n">⚪ 中立</div>
+<div class="track"><div class="seg neg" style="width:1.8847742022775789%"></div><div class="mid"></div></div>
+<div class="chips"><span class="chip cup">🤖 TXN +41</span><span class="chip cup">🧪 TER +36</span><span class="chip cup">🌐 GFS +24</span><span class="chip cup">⚡ MPWR +20</span><span class="chip cup">📦 AMKR +19</span><span class="chip cup">🛰️ MTSI +14</span><span class="chip cup">🔬 KLAC +13</span><span class="chip cup">🍓 AMD +12</span><span class="chip cup">🔎 ONTO +11</span><span class="chip cup">💎 ENTG +10</span><span class="chip cup">📶 SWKS +9</span><span class="chip cup">🏭 AMAT +8</span><span class="chip cup">🧠 SNPS +7</span><span class="chip cdown">🔵 INTC -1</span><span class="chip cdown">🔋 ON -1</span><span class="chip cdown">🧩 LSCC -4</span><span class="chip cdown">🐤 MCHP -4</span><span class="chip cdown">💧 MU -4</span><span class="chip cdown">🔧 LRCX -5</span><span class="chip cdown">🔗 CRDO -5</span><span class="chip cdown">🦋 MRVL -6</span><span class="chip cdown">🎧 CRUS -8</span><span class="chip cdown">💚 NVDA -9</span><span class="chip cdown">📱 QCOM -9</span><span class="chip cdown">🔦 COHR -10</span><span class="chip cdown">🦄 ALAB -10</span><span class="chip cdown">📡 ADI -14</span><span class="chip cdown">🐰 AVGO -20</span><span class="chip cdown">✏️ CDNS -69</span><span class="chip cdown">📻 QRVO -70</span></div>
 </div>
-<p class="foot">神話ver2 ／ 司令塔（自動生成）</p>
+<div class="card c-w">
+<div class="ctop">
+<span class="emoji">💻</span>
+<span class="sec">③ソフトウェア</span>
+<span class="score c-w">-2.4%</span>
+</div>
+<div class="lab c-w">⚠️ やや流出</div>
+<div class="track"><div class="seg neg" style="width:5.4199432610968366%"></div><div class="mid"></div></div>
+<div class="chips"><span class="chip cup">DDOG +22</span><span class="chip cdown">PANW -14</span><span class="chip cdown">MSFT -16</span></div>
+</div>
+<div class="card c-w">
+<div class="ctop">
+<span class="emoji">🏦</span>
+<span class="sec">⑤銀行</span>
+<span class="score c-w">-3.1%</span>
+</div>
+<div class="lab c-w">⚠️ やや流出</div>
+<div class="track"><div class="seg neg" style="width:6.788148050999589%"></div><div class="mid"></div></div>
+<div class="chips"><span class="chip cup">JPM +20</span><span class="chip cup">BAC +6</span><span class="chip cdown">GS -35</span></div>
+</div>
+<div class="card c-w">
+<div class="ctop">
+<span class="emoji">🌐</span>
+<span class="sec">②情報サービス</span>
+<span class="score c-w">-6.1%</span>
+</div>
+<div class="lab c-w">⚠️ やや流出</div>
+<div class="track"><div class="seg neg" style="width:13.515490480116457%"></div><div class="mid"></div></div>
+<div class="chips"><span class="chip cup">V +17</span><span class="chip cup">GOOGL +14</span><span class="chip cdown">META -13</span><span class="chip cdown">NFLX -15</span><span class="chip cdown">MA -33</span></div>
+</div>
+<div class="card c-w">
+<div class="ctop">
+<span class="emoji">🛡️</span>
+<span class="sec">⑧純ディフェンシブ</span>
+<span class="score c-w">-6.2%</span>
+</div>
+<div class="lab c-w">⚠️ やや流出</div>
+<div class="track"><div class="seg neg" style="width:13.669164977445746%"></div><div class="mid"></div></div>
+<div class="chips"><span class="chip cup">KO +19</span><span class="chip cup">UNH +6</span><span class="chip cdown">PG -12</span><span class="chip cdown">JNJ -22</span><span class="chip cdown">LLY -22</span></div>
+</div>
+<div class="card c-d">
+<div class="ctop">
+<span class="emoji">📦</span>
+<span class="sec">⑦Eコマース</span>
+<span class="score c-d">-16.9%</span>
+</div>
+<div class="lab c-d">🔻 大口流出</div>
+<div class="track"><div class="seg neg" style="width:37.43429294931955%"></div><div class="mid"></div></div>
+<div class="chips"><span class="chip cdown">AMZN -3</span><span class="chip cdown">SHOP -8</span><span class="chip cdown">MELI -40</span></div>
+</div></div>
+<p class="foot">💕 セクタースコア＝構成銘柄の大口主導度(案A)の平均／チップ＝各銘柄の主導度%／単位%</p>
 </div></body></html>
