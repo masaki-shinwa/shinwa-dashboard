@@ -12,16 +12,16 @@
 --s:#2fa86a;--n:#9a8a98;--w:#d99a2e;--d:#e06a8a;
 --s-top:#9fe3c4;--n-top:#e3d4e0;--w-top:#f5d79a;--d-top:#f4b0c4;
 --cup:#2fa86a;--cdown:#e06a8a;--cup-bg:#eefaf2;--cdown-bg:#fdf0f4;
---here-bg:#ffe8f4;--here-t:#d6489a;}
+--here-bg:#ffe3f1;--here-t:#d6489a;--here-border:#f06aae;--here-card-bg:#fff5fb;}
 @media(prefers-color-scheme:dark){:root{--bg:#15101a;--card:#241b2b;--line:#3d2f44;--t1:#f0e8f2;--t2:#a99cae;--t3:#6f6276;--accent:#e8a8d8;
 --track:#2a2232;--midline:#473a50;--pos:#5cc99a;--neg:#e88aa6;
 --s:#5cd99a;--n:#a99cae;--w:#f0c878;--d:#f08aa8;
 --s-top:#2c6b4f;--n-top:#473a50;--w-top:#6b5320;--d-top:#6b2f42;
 --cup:#5cd99a;--cdown:#f08aa8;--cup-bg:#16261d;--cdown-bg:#2a181f;
---here-bg:#3a1f30;--here-t:#f0a8d0;}}
+--here-bg:#4a2540;--here-t:#ffb0db;--here-border:#e86ab4;--here-card-bg:#2e1c2a;}}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;padding:13px;}
-.wrap{max-width:1100px;margin:0 auto;}
+.wrap{max-width:680px;margin:0 auto;}
 .head{display:flex;align-items:center;gap:7px;margin-bottom:12px;}
 .htitle{font-size:19px;font-weight:800;}
 .nav{font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:15px;padding:6px 12px;text-decoration:none;box-shadow:0 3px 8px rgba(230,168,216,.4);}
@@ -38,10 +38,11 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 .card.c-w{border-top-color:var(--w-top);}
 .card.c-d{border-top-color:var(--d-top);}
 .card.c-ng{opacity:.5;}
-.ctop{display:flex;align-items:center;gap:7px;margin-bottom:2px;}
+.card.here-card{border:2.5px solid var(--here-border);background:var(--here-card-bg);box-shadow:0 6px 22px rgba(240,106,174,.35);}
+.ctop{display:flex;align-items:center;gap:7px;margin-bottom:2px;flex-wrap:wrap;}
 .emoji{font-size:18px;}
 .sec{font-size:16px;font-weight:800;}
-.here{font-size:10px;font-weight:800;color:var(--here-t);background:var(--here-bg);padding:2px 7px;border-radius:8px;margin-left:4px;}
+.here{font-size:13px;font-weight:800;color:#fff;background:var(--here-border);padding:4px 11px;border-radius:11px;box-shadow:0 2px 8px rgba(240,106,174,.5);}
 .score{font-size:18px;font-weight:800;margin-left:auto;}
 .role{font-size:10px;color:var(--t3);font-weight:700;margin-bottom:6px;}
 .lab{font-size:12px;font-weight:700;margin-bottom:8px;}
@@ -56,21 +57,21 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 .chip.cup{color:var(--cup);background:var(--cup-bg);}
 .chip.cdown{color:var(--cdown);background:var(--cdown-bg);}
 .foot{text-align:center;font-size:10px;color:var(--t3);margin-top:14px;}
-@media(min-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 </style></head>
 <body><div class="wrap">
 <div class="head"><span class="htitle">🧭 神話 司令塔</span>
 <a class="nav" href="pre.html" style="margin-left:auto;">🌅 プレ</a>
 <a class="nav" href="live.html">⚡ ライブ</a>
 <a class="nav" href="shikin.html">💰 資金</a></div>
-<div class="timecard"><span class="tk">🕒 更新</span><span class="tj">06/26 20:53 JST</span><span class="te">06/26 07:53 EDT</span></div>
-<div class="lead">サイクル順に固定表示。📍今ここ＝最も大口が入っているセクター。</div>
+<div class="timecard"><span class="tk">🕒 更新</span><span class="tj">06/26 20:59 JST</span><span class="te">06/26 07:59 EDT</span></div>
+<div class="lead">サイクル順に固定表示。📍いま大口はここ＝最も大口が入っているセクター。</div>
 <div class="cycle">①半導体→②情報→③ソフト→④消費電子→⑦EC→⑥防衛→⑤銀行（末端）。⑤に回り切ったら一周＝①②の底が近い。</div>
 <div class="grid">
 <div class="card c-n">
 <div class="ctop">
 <span class="emoji">🔲</span>
 <span class="sec">①半導体</span>
+
 <span class="score c-n">-0.9%</span>
 </div>
 <div class="role">攻め・先頭打者</div>
@@ -82,6 +83,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <div class="ctop">
 <span class="emoji">🌐</span>
 <span class="sec">②情報サービス</span>
+
 <span class="score c-w">-6.1%</span>
 </div>
 <div class="role">攻め・第2陣</div>
@@ -93,6 +95,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <div class="ctop">
 <span class="emoji">💻</span>
 <span class="sec">③ソフトウェア</span>
+
 <span class="score c-w">-2.4%</span>
 </div>
 <div class="role">中盤・物色拡大</div>
@@ -104,6 +107,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <div class="ctop">
 <span class="emoji">📱</span>
 <span class="sec">④消費電子</span>
+
 <span class="score c-n">-0.6%</span>
 </div>
 <div class="role">中盤・川下</div>
@@ -115,6 +119,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <div class="ctop">
 <span class="emoji">📦</span>
 <span class="sec">⑦Eコマース</span>
+
 <span class="score c-d">-16.9%</span>
 </div>
 <div class="role">中盤・景気敏感</div>
@@ -122,10 +127,11 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <div class="track"><div class="seg neg" style="width:37.43429294931955%"></div><div class="mid"></div></div>
 <div class="chips"><span class="chip cdown">AMZN -3</span><span class="chip cdown">SHOP -8</span><span class="chip cdown">MELI -40</span></div>
 </div>
-<div class="card c-s">
+<div class="card c-s here-card">
 <div class="ctop">
 <span class="emoji">🚀</span>
-<span class="sec">⑥宇宙・防衛 <span class="here">📍今ここ</span></span>
+<span class="sec">⑥宇宙・防衛</span>
+<span class="here">📍 いま大口はここ</span>
 <span class="score c-s">+22.6%</span>
 </div>
 <div class="role">終盤・防御へ</div>
@@ -137,6 +143,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <div class="ctop">
 <span class="emoji">🏦</span>
 <span class="sec">⑤銀行</span>
+
 <span class="score c-w">-3.1%</span>
 </div>
 <div class="role">末端・回り切り⇒底近い</div>
@@ -148,6 +155,7 @@ body{margin:0;background:var(--bg);color:var(--t1);font-family:-apple-system,Bli
 <div class="ctop">
 <span class="emoji">🛡️</span>
 <span class="sec">⑧純ディフェンシブ</span>
+
 <span class="score c-w">-6.2%</span>
 </div>
 <div class="role">逃避先・参考</div>
